@@ -1,5 +1,6 @@
 async function getAllCharacters() {
-    const response = await (fetch('https://rickandmortyapi.com/api/character/'));
+    let page = Math.round(Math.random()*24)
+    const response = await (fetch(`https://rickandmortyapi.com/api/character/?page= ${page}`));
     const parsedJson = await response.json()
     return parsedJson.results
 
